@@ -33,21 +33,21 @@ MongoClient.connect(`${url}/todoApp`,(err, client) => {
 // })
 
 
-db.collection('Users').find({name: 'Abhinandan'}).toArray().then((docs) =>{
-console.log(JSON.stringify(docs, undefined, 2));
-},(err) => {
-    console.log('Unable to fetch users', err);
-})
+// db.collection('Users').find({name: 'Abhinandan'}).toArray().then((docs) =>{
+// console.log(JSON.stringify(docs, undefined, 2));
+// },(err) => {
+//     console.log('Unable to fetch users', err);
+// })
 
-    // db.collection('Todo').insertOne({
-    //     text: 'Todo Something',
-    //     complete: false
-    // },(err,result) =>{
-    //     if(err) {
-    //         return console.log('unable to create Todo collection', err);
-    //     }
-    //     console.log(JSON.stringify(result.ops, undefined, 2));
-    // });
+    db.collection('Todo').insertOne({
+        text: 'Eat Lunch',
+        complete: false
+    },(err,result) =>{
+        if(err) {
+            return console.log('unable to create Todo collection', err);
+        }
+        console.log(JSON.stringify(result.ops, undefined, 2));
+    });
 
     // db.collection('Users').insertOne({
     //     name: 'Abhinandan',
