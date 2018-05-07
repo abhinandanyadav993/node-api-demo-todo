@@ -24,6 +24,14 @@ app.post('/todos', (req, res) => {
 })
 
 
+app.get('/todos', (req, res) => {
+    Todo.find().then((todos) => {
+            res.send({todos});
+    }, (err) =>{
+        res.status(400).send(err);
+    });
+})
+
 const port = process.env.port | 1300;
 app.listen(port ,() =>{
     console.log(`server running on ${port} port`);
