@@ -52,7 +52,7 @@ app.get('/todo/:id', (req, res) => {
     }
 })
 
-const port = process.env.port | 1300;
+const port = process.env.PORT | 1300;
 app.listen(port ,() =>{
     console.log(`server running on ${port} port`);
 })
